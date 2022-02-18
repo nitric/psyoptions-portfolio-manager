@@ -15,6 +15,8 @@ import { DateSelector } from "./DatePicker.module";
 import ProjectDetail from "./ProjectDetail";
 import projectOptionsData from "../content/ProjectOptionsData";
 import mintInfosList, {mintInfoRecord} from "../content/MintInfos";
+//import HoldingHeader from "./holding_header";
+import HoldingHeader from "./holding_header";
 
 const PortfolioOverview = () => {
   const wallet = useConnectedWallet();
@@ -68,6 +70,13 @@ const PortfolioOverview = () => {
       <div className={styles["Parent"]}>
         <div className={styles["child2"]}>
           <h3>PORTFOLIO OVERVIEW</h3>
+          {projectList.map((project) =>
+            <HoldingHeader
+              project = {project}
+            />
+    
+          )}
+          {/* <HoldingHeader/> */}
           {/* {loadingProjects 
           // || Object.keys(mintInfos).length <= 0 
           ? (
@@ -87,6 +96,7 @@ const PortfolioOverview = () => {
             ))
           )} */}
           {projectOptionsData.map((projectOption, index) => (
+            
               <div>
                 <ProjectOverview
                   key={projectOption.project.name}
@@ -94,8 +104,10 @@ const PortfolioOverview = () => {
                   optionAccounts={projectOption.options}
                   mintInfos={mintInfoRecord}
                 />
+                
               </div>
             ))}
+            
         </div>
         <div className={styles["walletContainer"]}>
           <Wallet />

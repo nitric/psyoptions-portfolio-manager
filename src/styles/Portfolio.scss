@@ -19,6 +19,21 @@
     }
 }
 
+
+.holding-header {
+    display:flex;
+    width: 100%;
+    border: 2px solid $psyoptions-pink;
+    padding: 10px 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    .header-section {
+        margin: 8px 4px;
+    }
+
+}
+
 .portfolio-header {
     display: flex;
     width: 100%;
